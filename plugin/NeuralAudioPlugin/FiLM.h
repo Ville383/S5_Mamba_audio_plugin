@@ -102,7 +102,7 @@ public:
   const std::string& getLastError() const noexcept { return lastError; }
 
   // Process conditioning input and update gamma and beta
-  inline void processSample(const float& input1, const float& input2) noexcept
+  inline void processSample(const T& input1, const T& input2) noexcept
   {
     // reuse preallocated SIMD registers
     v_in0 = xsimd::batch<T, xsimd::default_arch>(input1);
